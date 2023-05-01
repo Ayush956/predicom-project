@@ -1,0 +1,54 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/user/login/" method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="uname">
+        <input type="text" placeholder="password" name="password">
+        <button type="submit">Log in</button>
+    </form>
+</body> {% endcomment %}
+{% comment %} </html> {% endcomment %}
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login signup</title>
+    <link href="{%static "css/login.css"%}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container-form">
+            <h3>Login to your Account</h3>
+            <h4>Login into your account to accesss the features</h4>
+            <form action="/user/login/" method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                <input type="text" class="details" placeholder="Enter Username" name="uname" required>
+                <input type="password" class="details" placeholder="Enter Password" name="password" required>
+            </div>
+    
+            <div class="btn">
+                <button class="btn-login" type="submit">Log In</button>
+            </div>
+
+            <div class="noacc">
+                <p>!! Don't have an account !! </p>
+                <a href="/signup/">
+                <button class="btn-signup"> Sign Up </button>
+                </a>
+            </div>
+            </form>
+        </div>    
+    </div>
+</body>
+</html>

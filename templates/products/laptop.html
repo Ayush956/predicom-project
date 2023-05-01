@@ -1,0 +1,85 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="{%static "css/laptop.css"%}" rel = "stylesheet">
+    <link href="{%static "css/footer.css"%}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body>
+    {% include "products/navbar2.html" %}
+    {% if isActive %}
+        <div class="main" style="height: 400px;width: 350px;border: 4px solid bisque;margin:50px auto;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
+            <div class="img" style="height:70%;width: 100%;">
+                <img src="{%static "img/laptop_pred.jpg"%}" class="card-img-top" alt="..." style="height:100%">
+            </div>
+            <div class="content" style="text-align:center;font-size: 40px;background-color: bisque;font-family: 'Times New Roman', Times, serif;">
+                Your Predicted Price is : ₹{{pred}}
+            </div>
+        </div>
+        {% include "footer.html"%}
+    {% else %}
+    <div class="predictor">
+        
+        <div class="container">
+            <h3>Please enter the following values</h3>
+            
+            <form action="/laptop/" class="form">
+                <label for="company"> Company </label>
+                <select name="n1" id="company" aria-placeholder="company">
+                <option value="0" name="n1">Dell</option>
+                <option value="1"name="n1">Lenovo</option>
+                <option value="2" name="n1">HP</option>
+                <option value="3" name="n1">Asus</option>
+                <option value="4" name="n1">Acer</option>
+                <option value="5" name="n1">MSI</option>
+                <option value="6" name="n1">Toshiba</option>
+                <option value="7" name="n1">Apple</option>
+                <option value="8" name="n1">Samsung</option>
+                <option value="9" name="n1">Razer</option>
+                <option value="10" name="n1">MediaCom</option>
+                <option value="11" name="n1">Microsoft</option>
+                <option value="12" name="n1">Xiomi</option>
+                <option value="13" name="n1">Vero</option>
+                <option value="14" name="n1">Chuwi</option>
+                <option value="15" name="n1">Google</option>
+                <option value="16" name="n1">Fujitsu</option>
+                <option value="17" name="n1">LG 17</option>
+                <option value="18" name="n1">Huawei</option>
+            </select>
+            <label for="laptop-type"> Laptop Type </label>
+            <select name="n2" id="laptop-type">
+                <option value="0" name="n2">Notebook</option>
+                <option value="1" name="n2">Gaming</option>
+                <option value="2" name="n2">Ultrabook</option>
+                <option value="3" name="n2">2 in 1 Convertible</option>
+                <option value="4" name="n2">Workstation</option>
+                <option value="5" name="n2">Netbook</option>
+            </select>
+            {% comment %} {% csrf_token %} {% endcomment %}
+                <input type="text" class="form-input" placeholder="Size of the laptop in inches" name="n3">
+                <input type="text" class="form-input" placeholder="RAM of the laptop in GB" name="n4">
+                <input type="text" class="form-input" placeholder="Total memory of the laptop in GB" name="n5">
+                <label for="os">Operating System</label>
+                <select name="n6" id="os">
+                    <option value="0" name="n6">Windows</option>
+                    <option value="1" name="n6">No OS</option>
+                    <option value="2" name="n6">Linux</option>
+                    <option value="3" name="n6">Chrome OS</option>
+                    <option value="4" name="n6">MacOs</option>
+                    <option value="5" name="n6">Mac OS X</option>
+                    <option value="6" name="n6">Android</option>
+                </select>
+                <input type="text" class="form-input" placeholder="Weight of the laptop in kgs" name="n7">
+                <button type="submit" class="submit">Predict</button>
+            </form>
+        </div>
+
+    </div>
+    {%endif%}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>

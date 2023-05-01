@@ -1,0 +1,100 @@
+footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* bottom: -700px; */
+ 
+}
+
+footer .contend{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+flex-direction: row;
+}
+
+footer .contend .sec{
+margin-right: 30px;
+}
+
+footer .contend .sec.aboutus{
+width: 40%;
+}
+
+footer .contend h2{
+position: relative;
+color: #fff;
+font-weight: 500;
+margin-bottom: 15px;
+}
+
+footer .contend h2:before{
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 50px;
+height: 2px;
+background: #f00;
+}
+
+footer p{
+color: #999;
+}
+
+.quickLinks{
+position: relative;
+width: 25%;
+}
+.quickLinks ul li{
+list-style: none;
+}
+.quickLinks ul li a{
+color: #999;
+text-decoration: none;
+margin-bottom: 10px;
+display: inline-block;
+}
+
+.quickLinks ul li a:hover{
+color: #fff;
+}
+
+.contact{
+width: calc(35% - 120px);
+margin-right: 0;
+}
+
+.contact .info{
+position: relative;
+}
+
+.contact .info li{
+display: flex;
+margin-bottom: 16px;
+}
+
+.contact .info li span:nth-child(1){
+color: #fff;
+font-size: 20px;
+margin-right: 10px;
+}
+
+.contact .info li span{
+color: #999;
+}
+
+.copyrightText{
+position: relative;
+width: 100%;
+background: #181818;
+padding: 8px 100px;
+text-align: center;
+color: #999;
+/* bottom: -700px; */
+}

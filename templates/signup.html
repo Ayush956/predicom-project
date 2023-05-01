@@ -1,0 +1,52 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/user/signup/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="uname" placeholder="user name">
+        <input type="text" name="email" placeholder=" email">
+        <input type="text" name="pass" placeholder="password">
+        <input type="text" name="conpass" placeholder="confirm">
+        <button type="submit">Sign up</button>
+    </form>
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="{%static "css/login.css"%}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container-form">
+            <h3>Sign Up</h3>
+            <h4>SignUp into your account to accesss the features</h4>
+            <form action="/user/signup/" method="POST">
+                <div class="input-field">
+                {% csrf_token %}
+                <input type="text" class="details" placeholder="Enter Username" name="uname" required>
+                <input type="text" class="details" placeholder="Enter Email" name="email" required>
+                <input type="password" class="details" placeholder="Enter Password" name="pass" required>
+                <input type="password" class="details" placeholder="ConfirmPassword" name="conpass" required>
+            </div>
+            <div class="btn">
+                <button class="btn-login" type="submit">Sign Up</button>
+            </div>
+            </form>
+        </div>    
+    </div>
+</body>
+</html>

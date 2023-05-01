@@ -18,7 +18,7 @@ def home(request):
         'status':status
     }
     print(name)
-    return render(request,"home.html",data)
+    return render(request,"index.html",data)
 
 def services(request):
     return render(request ,"services.html")
